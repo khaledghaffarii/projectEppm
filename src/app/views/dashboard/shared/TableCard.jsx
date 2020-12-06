@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import {
   Card,
   Icon,
@@ -65,7 +65,7 @@ const TableCard = () => {
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          {/* <TableBody>
             {productList.map((product, index) => (
               <TableRow key={index}>
                 <TableCell className="px-0 capitalize" colSpan={4} align="left">
@@ -109,7 +109,7 @@ const TableCard = () => {
                 </TableCell>
               </TableRow>
             ))}
-          </TableBody>
+          </TableBody> */}
         </Table>
       </div>
     </Card>
