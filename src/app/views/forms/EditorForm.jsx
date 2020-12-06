@@ -18,8 +18,8 @@ class EditorForm extends Component {
         <div className="mb-sm-30">
           <Breadcrumb
             routeSegments={[
-              { name: "Forms", path: "/forms" },
-              { name: "Editor" }
+              { name: "projet", path: "/projects"},
+              { name: "projet achevés" }
             ]}
           />
         </div>
