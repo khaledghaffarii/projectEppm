@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1)
   },
-  input: {
+  input: {  
     display: "none"
   }
 }));
