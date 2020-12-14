@@ -163,11 +163,11 @@ class Layout1Sidenav extends Component {
       settings.themes[settings.layout1Settings.leftSidebar.theme] || theme;
     return (
       <SidenavTheme theme={sidenavTheme} settings={settings}>
-        <div className="sidenav">
+        <div className="sidenav ">
           <div
             className="sidenav__hold"
             style={{
-              backgroundImage: `url(${settings.layout1Settings.leftSidebar.bgImgURL})`
+              backgroundImage: `url(${settings.layout1Settings.leftSidebar})`
             }}
           >
             {!this.state.hidden && (

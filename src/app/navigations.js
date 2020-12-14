@@ -9,14 +9,47 @@ export const navigations = [
     icon: "description",
     children: [
       {
-        name: "projets en cours",
-        path: "/projects/en cours",
-        iconText: "B"
+        name: "Projets En Cours",
+        //path: "/projects/encours",
+        icon:"menu",
+        children:[
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-en-cour"
+          },
+          {
+            name: "Traitement de l'eau",
+            path:"/projects/water-trairtement-en-cour"
+          },
+          {
+            name: "Energies renouvelables",
+            path:"/projects/enrgies-renewable-en-cour"
+          },
+          {
+            name: "Opération Maintenance",
+            path:"/projects/operation-maintenace-en-cour"
+          },
+        ],
+        //iconText: "B"
       },
       {
-        name: "projets achevés",
+        name: "Projets Achevés",
         path: "/projects/achevés",
-        iconText: "E"
+        icon: "menu",
+        children:[
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-acheve"
+          },
+          {
+            name: "Traitement de l'eau",
+            path:"/projects/water-trairtement-acheve"
+          },
+          {
+            name: "Industrie",
+            path:"/projects/industrie-acheve"
+          },
+        ],
       }
     ]
   },

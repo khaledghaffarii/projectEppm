@@ -15,11 +15,11 @@ import ShoppingCart from "../SharedCompoents/ShoppingCart";
 const styles = theme => ({
   topbar: {
     "& .topbar-hold": {
-      backgroundColor: theme.palette.primary.main,
-      height: "80px",
+      backgroundColor: theme.palette.info.dark,
+      height: "50px",
       "&.fixed": {
         boxShadow: theme.shadows[8],
-        height: "64px"
+        height: "52px"
       }
     }
   },

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { matchRoutes } from "react-router-config";
 import { connect } from "react-redux";
-import AppContext from "app/appContext";
+import AppContext from "../appContext";
 import {
   setLayoutSettings,
   setDefaultSettings

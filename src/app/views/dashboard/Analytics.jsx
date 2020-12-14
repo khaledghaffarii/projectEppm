@@ -3,7 +3,7 @@ import { Grid, Card } from "@material-ui/core";
 
 import DoughnutChart from "../charts/echarts/Doughnut";
 
-import ModifiedAreaChart from "./shared/ModifiedAreaChart";
+//import ModifiedAreaChart from "./shared/ModifiedAreaChart";
 import StatCards from "./shared/StatCards";
 import TableCard from "./shared/TableCard";
 import RowCards from "./shared/RowCards";
@@ -20,11 +20,11 @@ class Dashboard1 extends Component {
 
     return (
       <Fragment>
-        <div className="pb-24 pt-7 px-8 bg-primary">
+        <div className="pb-24 pt-7 px-8 bg-danger">
           <div className="card-title capitalize text-white mb-4 text-white-secondary">
-            Last 12 months sales
+            
           </div>
-          <ModifiedAreaChart
+          {/* <ModifiedAreaChart
             height="280px"
             option={{
               series: [
@@ -50,7 +50,7 @@ class Dashboard1 extends Component {
                 ]
               }
             }}
-          ></ModifiedAreaChart>
+          ></ModifiedAreaChart> */}
         </div>
 
         <div className="analytics m-sm-30 mt--18">
