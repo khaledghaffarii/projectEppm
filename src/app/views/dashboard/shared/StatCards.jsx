@@ -12,14 +12,14 @@ const styles = theme => ({
 
 const StatCards = ({ classes }) => {
   return (
-    <Grid container spacing={3} className="mb-3">
+    <Grid container spacing={10} className="mb-4">
       <Grid item xs={12} md={6}>
         <Card className="play-card p-sm-24 bg-paper" elevation={6}>
           <div className="flex items-center">
             <Icon className={classes.icon}>group</Icon>
             <div className="ml-3">
-              <small className="text-muted">New Leads</small>
-              <h6 className="m-0 mt-1 text-primary font-medium">3050</h6>
+              <small className="text-muted">Customer</small>
+              <h6 className="m-0 mt-1 text-primary font-medium">200</h6>
             </div>
           </div>
           <Tooltip title="View Details" placement="top">
@@ -50,7 +50,7 @@ const StatCards = ({ classes }) => {
           <div className="flex items-center">
             <Icon className={classes.icon}>store</Icon>
             <div className="ml-3">
-              <small className="text-muted">Inventory Status</small>
+              <small className="text-muted">Product</small>
               <h6 className="m-0 mt-1 text-primary font-medium">
                 8.5% Stock Surplus
               </h6>
@@ -68,7 +68,7 @@ const StatCards = ({ classes }) => {
           <div className="flex items-center">
             <Icon className={classes.icon}>shopping_cart</Icon>
             <div className="ml-3">
-              <small className="text-muted">Orders to deliver</small>
+              <small className="text-muted">Purchese</small>
               <h6 className="m-0 mt-1 text-primary font-medium">305 Orders</h6>
             </div>
           </div>

@@ -54,7 +54,7 @@ const Layout1 = props => {
               <MatxSuspense>{renderRoutes(routes)}</MatxSuspense>
             </div>
             <div className="my-auto" />
-            {settings.footer.show && !settings.footer.fixed && <Footer />}
+            {/* {settings.footer.show && !settings.footer.fixed && <Footer />} */}
           </Scrollbar>
         )}
 
@@ -73,7 +73,7 @@ const Layout1 = props => {
 
         {settings.footer.show && settings.footer.fixed && <Footer />}
       </div>
-      {settings.secondarySidebar.show && <SecondarySidebar />}
+      {/* {//settings.secondarySidebar.show && <SecondarySidebar />} */}
     </div>
   );
 };

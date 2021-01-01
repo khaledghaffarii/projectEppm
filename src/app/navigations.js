@@ -1,17 +1,18 @@
 export const navigations = [
   {
-    name: "Dashboard",
+    name: "Home",
     path: "/dashboard/analytics",
-    icon: "dashboard"
+    icon: "home"
   },
+  
   {
-    name: "Projets",
-    icon: "description",
+    name: "Projects",
+    icon: "work",
     children: [
       {
-        name: "Projets En Cours",
+        name: "En Cours",
         //path: "/projects/encours",
-        icon:"menu",
+        icon:"description",
         children:[
           {
             name: "Gaz et pétrole",
@@ -29,13 +30,17 @@ export const navigations = [
             name: "Opération Maintenance",
             path:"/projects/operation-maintenace-en-cour"
           },
+          {
+            name: "Industrie",
+            path:"/projects/industrie"
+          },
         ],
         //iconText: "B"
       },
       {
-        name: "Projets Achevés",
-        path: "/projects/achevés",
-        icon: "menu",
+        name: " Achevés",
+        //path: "/projects/achevés",
+        icon: "description",
         children:[
           {
             name: "Gaz et pétrole",
@@ -49,10 +54,153 @@ export const navigations = [
             name: "Industrie",
             path:"/projects/industrie-acheve"
           },
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-achevés"
+          },
+          {
+            name: "Energies renouvelables",
+            path:"/projects/enrgies-renewable-achevés"
+          },
+        ],
+      },
+      {
+        name: " Annulés",
+        //path: "/projects/annulés",
+        icon: "description",
+        children:[
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-annule"
+          },
+          {
+            name: "Traitement de l'eau",
+            path:"/projects/water-trairtement-annule"
+          },
+          {
+            name: "Industrie",
+            path:"/projects/industrie-annule"
+          },
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-annule"
+          },
+          {
+            name: "Energies renouvelables",
+            path:"/projects/enrgies-renewable-annule"
+          },
+        ],
+      },
+      {
+        name: " Non Commencé",
+       // path: "/projects/annulés",
+        icon: "description",
+        children:[
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-non-commence"
+          },
+          {
+            name: "Traitement de l'eau",
+            path:"/projects/water-trairtement-non-commence"
+          },
+          {
+            name: "Industrie",
+            path:"/projects/industrie-non-commence"
+          },
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-non-commence"
+          },
+          {
+            name: "Energies renouvelables",
+            path:"/projects/enrgies-renewable-non-commence"
+          },
+        ],
+      },
+      {
+        name: " En Attente",
+       // path: "/projects/annulés",
+        icon: "description",
+        children:[
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-en-attente"
+          },
+          {
+            name: "Traitement de l'eau",
+            path:"/projects/water-trairtement-en-attente"
+          },
+          {
+            name: "Industrie",
+            path:"/projects/industrie-en-attente"
+          },
+          {
+            name: "Gaz et pétrole",
+            path:"/projects/oil-gaz-en-attente"
+          },
+          {
+            name: "Energies renouvelables",
+            path:"/projects/enrgies-renewable-en-attente"
+          },
         ],
       }
     ]
   },
+  {
+    name: "Purchase",
+    icon: "shopping_cart",
+    children: [
+      {
+        name: "Supplier order",
+        path: "/purchase/order",
+       
+      },
+      {
+        name: "Supplier Delivery Note",
+        path: "/purchase/deliverynote",
+       
+      },
+      {
+        name: "Supplier Invoice",
+        path: "purchase/invoice",
+       
+      },
+    
+      ]
+  },
+  {
+    name: "Customer",
+    icon: "person",
+    path: "/customer",
+  },
+  {
+    name: "Product And Service",
+    icon: "storage",
+    path: "/product",
+  },
+  {
+    name: "Supplier",
+    icon: "local_shipping",
+    path: "/Supplier",
+  },
+  {
+    name: "Setting",
+    icon: "settings",
+    children: [
+      {
+        name: "Add Project",
+        path: "/projects/add-project",
+        icon: "add_article"
+      },
+      {
+        name: "Project Management",
+        path: "/projects/manage-project",
+        icon: "build"
+      },
+    
+      ]
+  }
   // {
   //   name: "Drag and Drop",
   //   icon: "control_camera",
@@ -185,7 +333,7 @@ export const navigations = [
   //     },
   //     {
   //       name: "Menu",
-  //       path: "/material/menu",
+  //       path: "/material/description",
   //       iconText: "M"
   //     },
   //     {

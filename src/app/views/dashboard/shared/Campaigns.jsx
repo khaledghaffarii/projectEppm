@@ -5,7 +5,7 @@ import { SimpleCard, MatxProgressBar } from "matx";
 const Campaigns = () => {
   return (
     <div>
-      <SimpleCard title="Campaigns">
+      {/* <SimpleCard title="Campaigns">
         <small className="text-muted">Today</small>
         <div className="pt-2" />
         <MatxProgressBar value={75} color="primary" text="Google (102k)" />
@@ -31,7 +31,7 @@ const Campaigns = () => {
         <MatxProgressBar value={45} color="secondary" text="Twitter (40k)" />
         <div className="py-1" />
         <MatxProgressBar value={75} color="primary" text="Tensor (80k)" />
-      </SimpleCard>
+      </SimpleCard> */}
     </div>
   );
 };

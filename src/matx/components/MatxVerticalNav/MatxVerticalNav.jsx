@@ -25,7 +25,7 @@ const MatxVerticalNav = props => {
       if (item.children) {
         return (
           <MatxVerticalNavExpansionPanel item={item} key={index}>
-            {renderLevels(item.children)}
+              {renderLevels(item.children)}
           </MatxVerticalNavExpansionPanel>
         );
       } else if (item.type === "extLink") {
@@ -74,11 +74,11 @@ const MatxVerticalNav = props => {
                   );
                 }
               })()}
-              <span className="align-middle item-text">{item.name}</span>
-              <div className="mx-auto"></div>
-              {item.badge && (
-                <div className={`badge bg-${item.badge.color}`}>
-                  {item.badge.value}
+                <span className="align-middle item-text">{item.name}</span>
+                    <div className="mx-auto"></div>
+                      {item.badge && (
+                    <div className={`badge bg-${item.badge.color}`}>
+                    {item.badge.value}
                 </div>
               )}
             </TouchRipple>

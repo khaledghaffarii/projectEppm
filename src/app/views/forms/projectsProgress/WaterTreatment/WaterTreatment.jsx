@@ -3,13 +3,15 @@ import axios from 'axios';
 import { Breadcrumb ,SimpleCard} from "matx";
 // import { makeStyles } from '@material-ui/core/styles';
 // import Button from '@material-ui/core/Button';
-import { Table,TableHead,TableCell,TableBody,IconButton,Icon,TableRow} from "@material-ui/core";
-
+//import { Table,TableHead,TableCell,TableBody,IconButton,Icon,TableRow} from "@material-ui/core";
+import { Container,Table} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {NavLink} from 'react-router-dom';
 const WaterTreatment = () => {
   
   const [waterList, setWaterList] = useState([]);
   useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/water')
+    axios.get('http://eppmdashboard.herokuapp.com/api/projects/')
     .then(response=> {
         console.log(response.data)
         setWaterList(response.data);
@@ -27,8 +29,40 @@ const WaterTreatment = () => {
             ]}
           />
       </div>
+<SimpleCard title=" Traitement de L'eau :">
 
-      <SimpleCard title=" Traitement de L'eau :">
+    <Container className="col-sm-12 ml-1">
+      <Table responsive="sm" hover light className=" table-light">
+                  <thead>
+                    <tr>
+                      <th className="th-sm">Nom du Projet</th>
+                      <th className="th-sm">Client</th>
+                      <th className="th-sm">Location</th>
+                    </tr>
+                  </thead>
+
+                <tbody>
+                  {
+                    waterList.map((water, index) =>{
+                      if(waterList.status=="En Cours" ){
+                        return(
+                        <tr>
+                        
+                          <td className="td-sm"><NavLink style={{ 'textDecorationLine':'none','textDecorationStyle':'solid','color':'black','fontWeight':'300' }}  to={"/water-trairtement-en-cour/"+ water.id}>{water.name} </NavLink></td>
+                          <td > {water.customer}</td>
+                          <td > {water.location}</td>
+                        
+                        </tr>
+                        
+                        )}
+                      })
+                  }
+                </tbody>
+        </Table>
+    </Container>
+
+</SimpleCard>           
+      {/* <SimpleCard title=" Traitement de L'eau :">
         <Table className="whitespace-pre">
 
               <TableHead>
@@ -56,7 +90,7 @@ const WaterTreatment = () => {
               </TableBody>
 
          </Table>
-      </SimpleCard>
+      </SimpleCard> */}
        
 </div>
   )

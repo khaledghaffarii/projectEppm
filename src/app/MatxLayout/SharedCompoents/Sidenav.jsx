@@ -3,17 +3,19 @@ import Scrollbar from "react-perfect-scrollbar";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
+import { Container,Table ,Button,Form} from 'react-bootstrap'
 import { navigations } from "../../navigations";
 import { MatxVerticalNav } from "matx";
 import { setLayoutSettings } from "app/redux/actions/LayoutActions";
 
 const Sidenav = props => {
+
   const updateSidebarMode = sidebarSettings => {
+
     let { settings, setLayoutSettings } = props;
     let activeLayoutSettingsName = settings.activeLayout + "Settings";
     let activeLayoutSettings = settings[activeLayoutSettingsName];
-
+    
     setLayoutSettings({
       ...settings,
       [activeLayoutSettingsName]: {
@@ -24,6 +26,7 @@ const Sidenav = props => {
         }
       }
     });
+
   };
 
   const renderOverlay = () => (
@@ -34,16 +37,31 @@ const Sidenav = props => {
   );
 
   return (
+     
+       <Container className="col-sm-12 mr-1">
     <Fragment>
-      <Scrollbar
+       <img
+       id="eppmImage"
+       style={{width:'10em',height:'4em',marginTop:'5em'}}
+                    className="ml-9"
+                    src="/assets/images/eppm.png"
+                    alt="user"
+           /> 
+        
+         
+         
+        <Scrollbar
+        style={{marginTop:'4em'}}
         options={{ suppressScrollX: true }}
         className="scrollable position-relative"
-      >
-        {props.children}
-        <MatxVerticalNav navigation={navigations} />
-      </Scrollbar>
-      {renderOverlay()}
+        >{/* {props.children} */} {props.children}
+          
+          <MatxVerticalNav navigation={navigations} />
+        </Scrollbar>
+        {renderOverlay()}
     </Fragment>
+        </Container>
+       
   );
 };
 

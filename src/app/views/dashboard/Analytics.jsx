@@ -63,12 +63,12 @@ class Dashboard1 extends Component {
 
               <StatCards2 />
 
-              <h4 className="card-title text-muted mb-4">Ongoing Projects</h4>
+              {/* <h4 className="card-title text-muted mb-4">Ongoing Projects</h4> */}
               <RowCards />
             </Grid>
 
             <Grid item lg={4} md={4} sm={12} xs={12}>
-              <Card className="px-6 py-4 mb-6">
+              {/* <Card className="px-6 py-4 mb-6">
                 <div className="card-title">Traffic Sources</div>
                 <div className="card-subtitle">Last 30 days</div>
                 <DoughnutChart
@@ -79,7 +79,7 @@ class Dashboard1 extends Component {
                     theme.palette.primary.light
                   ]}
                 />
-              </Card>
+              </Card> */}
 
               <UpgradeCard />
 

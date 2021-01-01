@@ -4,7 +4,7 @@ const Brand = ({ children }) => {
   return (
     <div className="flex items-center justify-between brand-area">
       <Link to="/dashboard/analytics">
-      <b className="ml-3" style={{ 'fontWeight':'bold','fontSize':'4em','color':'#ea0020','fontFamily':'fantasy' }}></b>
+      <b className="ml-3" ></b>
       </Link>
      
       {children}

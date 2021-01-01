@@ -13,8 +13,8 @@ import {
 
 const RowCards = () => {
   return [1, 2, 3, 4].map(id => (
-    <Fragment key={id}>
-      <Card className="py-2 px-4 project-card">
+    <Fragment >
+      {/* <Card className="py-2 px-4 project-card">
         <Grid container alignItems="center">
           <Grid item md={5} xs={7}>
             <div className="flex items-center">
@@ -64,8 +64,8 @@ const RowCards = () => {
             </div>
           </Grid>
         </Grid>
-      </Card>
-      <div className="py-2" />
+      </Card> */}
+    
     </Fragment>
   ));
 };

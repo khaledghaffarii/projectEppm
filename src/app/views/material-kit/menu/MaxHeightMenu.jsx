@@ -5,25 +5,15 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { Icon } from "@material-ui/core";
 
 const options = [
-  "None",
-  "Atria",
-  "Callisto",
-  "Dione",
-  "Ganymede",
-  "Hangouts Call",
-  "Luna",
-  "Oberon",
-  "Phobos",
-  "Pyxis",
-  "Sedna",
-  "Titania",
-  "Triton",
-  "Umbriel"
+  "Edit",
+  "Delete",
+  
 ];
 
 const ITEM_HEIGHT = 48;
 
-function MaxHeightMenu() {
+function MaxHeightMenu(props) {
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -53,22 +43,29 @@ function MaxHeightMenu() {
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
-            width: 200
+            width: 130,
+            marginTop:'3em',
           }
         }}
       >
-        {options.map(option => (
-          <MenuItem
-            key={option}
-            selected={option === "Pyxis"}
-            onClick={handleClose}
-          >
-            {option}
-          </MenuItem>
-        ))}
+        {
+            options.map(option => (
+
+              <MenuItem
+                key={option}
+                selected={option === "Delete"}
+                onClick={ props.deleted }
+              >
+              
+              </MenuItem>
+              
+
+            ))
+        }
       </Menu>
     </div>
   );
+
 }
 
 export default MaxHeightMenu;
