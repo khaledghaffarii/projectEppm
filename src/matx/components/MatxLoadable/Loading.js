@@ -24,14 +24,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Loading = props => {
+ const Loading = props => {
   const classes = useStyles();
 
-  return (
+  return(
+
     <div className={classes.loading}>
-      <img src="/assets/images/logo-circle.svg" alt="" />
-      <CircularProgress />
+        <img src="/assets/images/logo-circle.svg" alt="" />
+        <CircularProgress/> 
     </div>
+
   );
 };
 

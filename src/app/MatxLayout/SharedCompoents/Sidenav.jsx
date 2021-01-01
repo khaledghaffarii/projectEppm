@@ -7,7 +7,8 @@ import { Container,Table ,Button,Form} from 'react-bootstrap'
 import { navigations } from "../../navigations";
 import { MatxVerticalNav } from "matx";
 import { setLayoutSettings } from "app/redux/actions/LayoutActions";
-
+//import { MDBSmoothScroll } from "mdbreact";
+import ReactScrollbar from 'react-scrollbar';
 const Sidenav = props => {
 
   const updateSidebarMode = sidebarSettings => {
@@ -35,32 +36,37 @@ const Sidenav = props => {
       className="sidenav__overlay"
     />
   );
-
+  const myScrollbar = {
+    
+  };
   return (
-     
-       <Container className="col-sm-12 mr-1">
-    <Fragment>
+  
+   
+         
+    <Fragment id="section1">
+   
+      
        <img
-       id="eppmImage"
-       style={{width:'10em',height:'4em',marginTop:'5em'}}
-                    className="ml-9"
-                    src="/assets/images/eppm.png"
-                    alt="user"
-           /> 
-        
-         
-         
+      id="eppmImage"
+      style={{width:'10em',height:'4em',marginTop:'5em'}}
+      className="ml-15"
+      src="/assets/images/eppm.png"
+      alt="user"
+        /> 
+           
+           
         <Scrollbar
-        style={{marginTop:'4em'}}
-        options={{ suppressScrollX: true }}
-        className="scrollable position-relative"
-        >{/* {props.children} */} {props.children}
-          
-          <MatxVerticalNav navigation={navigations} />
+          style={{marginTop:'4em'}}
+          options={{ suppressScrollX: true }}
+          className="scrollable position-relative"
+            >
+              {props.children}
+                 <hr/>
+              <MatxVerticalNav navigation={navigations} />
         </Scrollbar>
         {renderOverlay()}
-    </Fragment>
-        </Container>
+        </Fragment>
+    
        
   );
 };

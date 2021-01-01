@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 const SidenavTheme = ({ theme, settings }) => {
 
   function darkHoverStyle() {
-    return theme.palette.type === "dark"
+    return theme.palette.type === "light"
       ? `.navigation .nav-item:hover,
         .navigation .nav-item.active {
           color: ${theme.palette.text.primary};

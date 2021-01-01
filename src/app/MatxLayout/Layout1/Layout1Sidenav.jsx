@@ -167,7 +167,8 @@ class Layout1Sidenav extends Component {
           <div
             className="sidenav__hold"
             style={{
-              backgroundImage: `url(${settings.layout1Settings.leftSidebar})`
+              backgroundImage: `url(${settings.layout1Settings.leftSidebar})`,
+            
             }}
           >
             {!this.state.hidden && (
