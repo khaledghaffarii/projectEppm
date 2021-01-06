@@ -70,15 +70,16 @@ export class AddProjects extends Component {
                     elementConfig: {
                         type: 'text',
                         placeholder: 'Client',
-                        options: 
-                        [
-                            
+                        options:
+                        [ //'MSBI', 'STAROIL', 'ECM+', 'BRITSH GAS TUNISIA'
+                         //,'STAR CONTRACTING'
                             {value: 'MSBI', displayValue: 'MSBI'},
                             {value: 'STAROIL', displayValue: 'STAROIL'},
                             {value: 'ECM+', displayValue: 'ECM+'},
                             {value: 'BRITSH GAS TUNISIA', displayValue: 'BRITSH GAS TUNISIA'},
                             {value: 'STAR CONTRACTING', displayValue: 'STAR CONTRACTING'},
                         ]
+                    
                         
                     },
                     value: '',
@@ -131,14 +132,11 @@ export class AddProjects extends Component {
                     elementConfig: {
                       options: 
                       [
-
                         {value: 'En Cours', displayValue: 'En cours'},
                         {value: 'Non Commencé', displayValue: 'Non Commencé'},
                         {value: 'En Attente', displayValue: 'En Attente'},
                         {value: 'Annulé', displayValue: 'Annulé'},
                         {value: 'Fini', displayValue: 'Achevés'},
-                        
-                       
                       ]
                     },
                     value: '',
@@ -167,7 +165,6 @@ export class AddProjects extends Component {
                         type: 'checkbox',
                         
                     },
-    
                 },
             }, 
             loading: false,
@@ -176,7 +173,22 @@ export class AddProjects extends Component {
         
     }
     componentDidMount =() => {
-        console.log(this.state.projectForm.name.valid)
+    //     //console.log(this.state.projectForm.name.valid)
+    //     axios.get('http://eppmdashboard.herokuapp.com/api/projects')
+    
+    // .then(response => { 
+    //    for( let i=0; i<response.data.length; i++ )
+    //   {
+    //    // console.log(response.data[i].name)
+    //     this.setState({
+    //         exmpForm:response.data[i].name
+    //      }) 
+    //   }
+     
+  
+    // });
+    
+  
     }
     canceledHandler = ()=>
     {
@@ -188,7 +200,6 @@ export class AddProjects extends Component {
     
         const Swal = require('sweetalert2');
         
-
         event.preventDefault();
         this.setState( { loading: true } );
 
@@ -201,13 +212,13 @@ export class AddProjects extends Component {
         
         
         name:this.state.projectForm.name.value,
-        customer:this.state.projectForm.customer.value,
+        categorie:this.state.projectForm.categorie.value,
+        customer:this.state.projectForm.value,
         location:this.state.projectForm.location.value,
         totalCost:this.state.projectForm.totalCost.value,
         status:this.state.projectForm.status.value,
         BillingType:this.state.projectForm.BillingType.value,
-        description:this.state.projectForm.description.value,
-        
+        description:this.state.projectForm.description.value, 
         }
         Swal.fire({
                     stitle: "Êtes-vous sure de ces Coordonnées ?",
@@ -225,23 +236,21 @@ export class AddProjects extends Component {
     
                 Swal.fire(
                 'Ajouter!',
-                'Votre employée a été Ajouter avec succès. ',
+                'Projet Ajouter avec succès!! ',
                 'success',
-                
                 axios.post('http://eppmdashboard.herokuapp.com/api/projects' , newProject )
                 .then( response => {
                    
                     console.log(response)
-                    this.setState( { loading: false } );
-                    if(this.state.projectForm.status.value=="En Cours"){
+                    this.setState({ loading: false });
+                    if(this.state.projectForm.status.value == "En Cours"){
                         this.props.history.push('/projects/oil-gaz-en-cour');
                     }else if(this.state.projectForm.status.value=="Fini"){
                        {this.props.history.push('/projects/oil-gaz-acheve')} 
                     }
-                    
-                    console.log( this.props.history)
+                    console.log(this.props.history)
                 }),
-                toast.success(" Projet Creés !",{
+                toast.success(" Projet Ajouter !",{
                     position:toast.
                     POSITION.TOP_RIGHT,
                     autoClose: false, 
@@ -312,10 +321,11 @@ export class AddProjects extends Component {
             });
         }
         let form = (
-    <SimpleCard title="Ajout Projet">
+    
         <Form className=" col-lg-12 mt-5" onSubmit={this.projectDataHandler} >  
         
-            {formElementsArray.map(formElement => (
+            {
+            formElementsArray.map(formElement => (
                 <Input 
                     key={formElement.id}
                     elementType={formElement.config.elementType}
@@ -323,7 +333,7 @@ export class AddProjects extends Component {
                     value={formElement.config.value}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)}
                     invalid={!formElement.config.valid}
-                   // shouldValidate={formElement.config.validation}
+                    // shouldValidate={formElement.config.validation}
                     touched={formElement.config.touched}
                 />
             ))}
@@ -339,7 +349,7 @@ export class AddProjects extends Component {
                 </Form.Group>
            
         </Form >
-        </SimpleCard>
+      
     
         );
         if ( this.state.loading ) {

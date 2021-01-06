@@ -11,7 +11,7 @@ const WaterTreatment = () => {
   
   const [waterList, setWaterList] = useState([]);
   useEffect(()=>{
-    axios.get('http://eppmdashboard.herokuapp.com/api/projects/')
+    axios.get('http://eppmdashboard.herokuapp.com/api/projects')
     .then(response=> {
         console.log(response.data)
         setWaterList(response.data);

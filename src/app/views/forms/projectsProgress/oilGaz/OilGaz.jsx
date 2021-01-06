@@ -11,10 +11,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const OilGaz = () => {
   const isMountedComponent = useRef(true);  
   const _isMounted = false;   
-  const [oilGazList, setOilGazList] = useState([]);
+  const [oilGazList, setOilGazList] = useState([1, 2, 3, 4, 5]);
   useEffect(()=>{
-    
-    axios.get('http://eppmdashboard.herokuapp.com/api/projects')
+  
+    axios.get('http://eppmdashboard.herokuapp.com/api/projects',{
+      timeout: 1000
+    })
     
     .then(response => { 
       // for( let i=0; i<response.data.length; i++ )
@@ -32,7 +34,7 @@ const OilGaz = () => {
         isMountedComponent.current = false; 
       };   
   
-    });
+    },[]);
     
   })
   
@@ -66,16 +68,17 @@ const OilGaz = () => {
     <tbody>
     {
       oilGazList.map((oilGazLists, index) =>{
+       
         if( oilGazLists.status=="En Cours" && oilGazLists.categorie=="oilgaz" ){
           return(
           
             <tr>
              
-              <td key={index.id} className="td-sm"><NavLink style={{ 'textDecorationLine':'none','textDecorationStyle':'solid','color':'black','fontWeight':'300','fontFamily':'fantasy' }}  to={"/oil-gaz-en-cour/"+ oilGazLists.id }> {oilGazLists.name} </NavLink> </td>
-              <td key={index.id} >{oilGazLists.customer}</td>
-              <td key={index.id} >{oilGazLists.location}</td>
-              <td key={index.id} >{oilGazLists.status}</td>
-              <td key={index.id} >{oilGazLists.categorie}</td>
+              <td key={oilGazLists.toString()} className="td-sm"><NavLink style={{ 'textDecorationLine':'none','textDecorationStyle':'solid','color':'black','fontWeight':'300','fontFamily':'fantasy' }}  to={"/oil-gaz-en-cour/"+ oilGazLists.id }> {oilGazLists.name} </NavLink> </td>
+              <td key={oilGazLists.toString()} >{oilGazLists.customer}</td>
+              <td key={oilGazLists.toString()} >{oilGazLists.location}</td>
+              <td key={oilGazLists.toString()} >{oilGazLists.status}</td>
+              <td key={oilGazLists.toString()} >{oilGazLists.categorie}</td>
                                       
             </tr>
             

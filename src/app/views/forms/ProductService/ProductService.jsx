@@ -8,15 +8,15 @@ import { MDBCol, MDBIcon } from "mdbreact";
 import SearchIcon from '@material-ui/icons/Search';
 const ProductService = () => {
     const [productList, setProductList] = useState([]);
-    useEffect(()=>{
+    useEffect( () => {
     
         axios.get('http://eppmdashboard.herokuapp.com/api/purchase')
         .then(response => { 
-        console.log(response.data)
+         console.log(response.data)
          setProductList(response.data) 
         });
         
-      })
+      },[])
     return (
         <div className="m-sm-30">
             <div  className="mb-sm-30">
