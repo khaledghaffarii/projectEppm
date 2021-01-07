@@ -329,6 +329,7 @@ export class AddProjects extends Component {
         let form = (
     
         <Form className=" col-lg-12 mt-5" onSubmit={this.projectDataHandler} >  
+       
           <Form.Group controlId="formGridAddress1">
         <Form.Label>* Nom du projet </Form.Label>
         <Form.Control size="lg" type="text" placeholder="Nom du projet"  />
@@ -410,39 +411,23 @@ export class AddProjects extends Component {
         </Form.Group>
 
 
-<Form.Group controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Description du projet : </Form.Label>
-       <TextAreaComponent/>
-</Form.Group>
-    
-<Form.Group id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Envoyé l'e-mail de projet créé" />
-</Form.Group>
-
-
-            {/* {
-            formElementsArray.map(formElement => (
-                <Input 
-                    key={formElement.id}
-                    elementType={formElement.config.elementType}
-                    elementConfig={formElement.config.elementConfig}
-                    value={formElement.config.value}
-                    changed={(event) => this.inputChangedHandler(event, formElement.id)}
-                    invalid={!formElement.config.valid}
-                    // shouldValidate={formElement.config.validation}
-                    touched={formElement.config.touched}
-                />
-                ))
-            } */}
+        <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Description du projet : </Form.Label>
+            <TextAreaComponent/>
+        </Form.Group>
+            
+        <Form.Group id="formGridCheckbox">
+                <Form.Check type="checkbox" label="Envoyé l'e-mail de projet créé" />
+        </Form.Group>
             <hr/>
             
                  <Form.Group>
-                    <Button variant="success" disabled={this.state.formIsValid} onClick={this.projectDataHandler} className="mr-10"
-                        >Ajouter
-                    </Button>
-                    <Button variant="danger" type="submit" className="" onClick={this.canceledHandler}>
-                        Annuler
-                    </Button>
+                        <Button variant="success" disabled={this.state.formIsValid} onClick={this.projectDataHandler} className="mr-10"
+                            >Ajouter
+                        </Button>
+                        <Button variant="danger" type="submit" className="" onClick={this.canceledHandler}>
+                            Annuler
+                        </Button>
                  </Form.Group>
            
         </Form >
