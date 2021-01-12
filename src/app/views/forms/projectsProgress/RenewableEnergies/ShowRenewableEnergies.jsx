@@ -1,20 +1,27 @@
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect } from "react";
 import NavBar from './../../navBar/NavBAr';
 import { Table,Container} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SimpleCard,Breadcrumb} from "matx";
-
+import axios from '../../../../../axios.js';
 const ShowRenewableEnergies = (props) => {
 
     const [energyShowList, setEnergyShowList] = useState([]);
+    
     useEffect(()=>{
-      axios.get('http://eppmdashboard.herokuapp.com/api/projects/'+props.match.params.id)
-      .then(response=> {
-          console.log(response.data)
-          setEnergyShowList(response.data);
-      });
-    })
+        async function fetchData()
+      {
+        const res = await axios.get('/projects/' + props.match.params.id)
+        setEnergyShowList(res.data);
+      }
+      fetchData();
+    }, [] )
+    // axios.get('http://eppmdashboard.herokuapp.com/api/projects/'+props.match.params.id)
+    // .then(response=> {
+    //     console.log(response.data)
+    //     setEnergyShowList(response.data);
+    // });
 
     return (
         <div className="m-sm-30">
@@ -22,7 +29,7 @@ const ShowRenewableEnergies = (props) => {
             
         <Breadcrumb
               routeSegments={[
-                { name: "projets En Cours",   path: "/projects/operation-maintenace-en-cour" },
+                { name: "projets En Cours",   path: "/projects/enrgies-renewable-en-cour" },
                 { name: "Operation & Maintenance" }
               ]}
         />

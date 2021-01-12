@@ -1,22 +1,30 @@
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect } from "react";
 import NavBar from './../../navBar/NavBAr';
 import { Table,Container} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SimpleCard,Breadcrumb} from "matx";
-
+import axios from '../../../../../axios.js';
 const OilGazShow = (props) => {
 
 
   const [oilGazShowList, setOilGazShowList] = useState([]);
   useEffect(()=>{
-    axios.get('http://eppmdashboard.herokuapp.com/api/projects/'+props.match.params.id)
-    .then(response=> {
-       // console.log(response.data)
-        setOilGazShowList(response.data);
-    });
-  })
-
+    async function fetchData()
+    {
+      const res = await axios.get('/projects/' + props.match.params.id)
+      console.log(res.data)
+      setOilGazShowList(res.data);
+    }
+    fetchData();
+    
+  }, [] )
+  
+  // axios.get('http://eppmdashboard.herokuapp.com/api/projects/' + props.match.params.id)
+  // .then(response=> {
+  //    // console.log(response.data)
+  //     setOilGazShowList(response.data);
+  // });
     return (
     <div className="m-sm-30">
         <div  className="mb-sm-30">
@@ -29,8 +37,7 @@ const OilGazShow = (props) => {
         />
         </div>
         <SimpleCard title={oilGazShowList.name} > <h1></h1></SimpleCard>
-    
-        <br />
+      <br />
         
         <NavBar />
         <div>

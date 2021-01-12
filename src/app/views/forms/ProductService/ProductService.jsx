@@ -1,22 +1,33 @@
 import React, { useState, useEffect,useRef  } from "react";
 import { Breadcrumb ,SimpleCard} from "matx";
 import {NavLink} from 'react-router-dom'
-import axios from 'axios';
+//import axios from 'axios';
 import { Container,Table ,Button,Form} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MDBCol, MDBIcon } from "mdbreact";
 import SearchIcon from '@material-ui/icons/Search';
+import axios from '../../../../axios.js';
 const ProductService = () => {
+
     const [productList, setProductList] = useState([]);
+
     useEffect( () => {
     
-        axios.get('http://eppmdashboard.herokuapp.com/api/purchase')
-        .then(response => { 
-         console.log(response.data)
-         setProductList(response.data) 
-        });
-        
-      },[])
+        async function fetchData()
+        {
+          const res = await axios.get('/purchase' )
+          console.log(res.data)
+          setProductList(res.data)
+        }
+        fetchData();
+    }, [ ] )
+
+    // axios.get('http://eppmdashboard.herokuapp.com/api/purchase')
+    // .then(response => { 
+    //  console.log(response.data)
+    //  setProductList(response.data) 
+    // });
+    
     return (
         <div className="m-sm-30">
             <div  className="mb-sm-30">

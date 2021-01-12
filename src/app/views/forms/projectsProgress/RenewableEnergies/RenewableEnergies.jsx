@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+
+//import axios from 'axios';
 import { Breadcrumb ,SimpleCard} from "matx";
 // import { makeStyles } from '@material-ui/core/styles';
 // import Button from '@material-ui/core/Button';
@@ -7,16 +8,29 @@ import { Breadcrumb ,SimpleCard} from "matx";
 import { Container,Table} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavLink} from 'react-router-dom';
+import axios from '../../../../../axios.js';
 const RenewableEnergies = () => {
   
   const [energyList, setEnergyList] = useState([]);
   useEffect(()=>{
-    axios.get('http://eppmdashboard.herokuapp.com/api/projects')
-    .then(response=> {
-        console.log(response.data)
-        setEnergyList(response.data);
-    });
-  })
+
+    async function fetchData()
+    {
+            
+      const res = await axios.get('/projects')
+      console.log(res.data)
+      setEnergyList(res.data);
+      
+    }
+    fetchData();
+  }, [] )
+
+  // axios.get('http://eppmdashboard.herokuapp.com/api/projects')
+  // .then(response=> {
+  //     console.log(response.data)
+  //     setEnergyList(response.data);
+  // });
+
   return (
     
 <div className="m-sm-30">

@@ -1,6 +1,7 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useState, useEffect } from "react";
 import NavBar from './../../navBar/NavBAr';
+import axios from '../../../../../axios.js';
 import { Table,Container} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SimpleCard,Breadcrumb} from "matx";
@@ -9,12 +10,22 @@ const ShowOperationMaintenace = (props) => {
 
     const [operationShowList, setOperationShowList] = useState([]);
     useEffect(()=>{
-      axios.get('http://eppmdashboard.herokuapp.com/api/projects/'+props.match.params.id)
-      .then(response=> {
-          console.log(response.data)
-          setOperationShowList(response.data);
-      });
-    })
+      async function fetchData()
+      {
+              
+        const res = await axios.get( '/projects/' + props.match.params.id)
+        console.log(res.data)
+        setOperationShowList(res.data);
+      
+      }
+      fetchData();
+    },[])
+
+    // axios.get('http://eppmdashboard.herokuapp.com/api/projects/'+props.match.params.id)
+    // .then(response=> {
+    //     console.log(response.data)
+    //     setOperationShowList(response.data);
+    // });
     return (
     <div className="m-sm-30">
         <div  className="mb-sm-30">

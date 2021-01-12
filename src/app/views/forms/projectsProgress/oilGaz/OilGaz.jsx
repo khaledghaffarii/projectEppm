@@ -2,41 +2,58 @@ import React, { useState, useEffect,useRef  } from "react";
 import { Breadcrumb ,SimpleCard} from "matx";
 //import { Table,TableHead,TableCell,TableBody,TableRow} from "@material-ui/core";
 import {NavLink} from 'react-router-dom'
-import axios from 'axios';
+//import axios from 'axios';
 import { Container,Table} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import css from './css';
 // import { id } from "date-fns/locale";
 // import MaxHeightMenu from '../../../../views/material-kit/menu/MaxHeightMenu';
+import axios from '../../../../../axios.js';
+
 const OilGaz = () => {
   const isMountedComponent = useRef(true);  
   const _isMounted = false;   
-  const [oilGazList, setOilGazList] = useState([1, 2, 3, 4, 5]);
-  useEffect(()=>{
-  
-    axios.get('http://eppmdashboard.herokuapp.com/api/projects',{
-      timeout: 1000
-    })
-    
-    .then(response => { 
-      // for( let i=0; i<response.data.length; i++ )
-      // {
-      //   console.log(response.data[i].status = "Non Commencé")
-      // if(response.data[i].status = "Non Commencé")
-      //     { 
+  const [oilGazList, setOilGazList] = useState([]);
+  useEffect( ()=>{
+
+    async function fetchData()
+    {
             
-      //     }
-      // }
+      const res = await axios.get('/projects')
+      console.log(res.data)
       if (isMountedComponent.current) {
-      setOilGazList(response.data)
-      }
-      return () => { 
-        isMountedComponent.current = false; 
-      };   
-  
-    },[]);
+        setOilGazList(res.data)
+        }
+        return () => { 
+          isMountedComponent.current = false; 
+        };  
+
+    }
+    fetchData();
+  }, [])
+    // axios.get('http://eppmdashboard.herokuapp.com/api/projects',{
+    //   timeout: 1000
+    // })
     
-  })
+    // .then(response => { 
+    //   // for( let i=0; i<response.data.length; i++ )
+    //   // {
+    //   //   console.log(response.data[i].status = "Non Commencé")
+    //   // if(response.data[i].status = "Non Commencé")
+    //   //     { 
+            
+    //   //     }
+    //   // }
+    //   if (isMountedComponent.current) {
+    //   setOilGazList(response.data)
+    //   }
+    //   return () => { 
+    //     isMountedComponent.current = false; 
+    //   };   
+  
+    // });
+    
+
   
   return(
     
@@ -72,15 +89,15 @@ const OilGaz = () => {
         if( oilGazLists.status=="En Cours" && oilGazLists.categorie=="oilgaz" ){
           return(
           
-            <tr>
+             <tr>
              
-              <td key={oilGazLists.toString()} className="td-sm"><NavLink style={{ 'textDecorationLine':'none','textDecorationStyle':'solid','color':'black','fontWeight':'300','fontFamily':'fantasy' }}  to={"/oil-gaz-en-cour/"+ oilGazLists.id }> {oilGazLists.name} </NavLink> </td>
-              <td key={oilGazLists.toString()} >{oilGazLists.customer}</td>
-              <td key={oilGazLists.toString()} >{oilGazLists.location}</td>
-              <td key={oilGazLists.toString()} >{oilGazLists.status}</td>
-              <td key={oilGazLists.toString()} >{oilGazLists.categorie}</td>
+              <td key={oilGazLists.index} className="td-sm"><NavLink style={{ 'textDecorationLine':'none','textDecorationStyle':'solid','color':'black','fontWeight':'300','fontFamily':'fantasy' }}  to={"/oil-gaz-en-cour/"+ oilGazLists.id }> {oilGazLists.name} </NavLink> </td>
+              <td key={oilGazLists.index} >{oilGazLists.customer}</td>
+              <td key={oilGazLists.index} >{oilGazLists.location}</td>
+              <td key={oilGazLists.index} >{oilGazLists.status}</td>
+              <td key={oilGazLists.index} >{oilGazLists.categorie}</td>
                                       
-            </tr>
+             </tr>
             
             )
         }

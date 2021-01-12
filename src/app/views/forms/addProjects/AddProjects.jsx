@@ -23,178 +23,99 @@ export class AddProjects extends Component {
         
         super()
         this.state = {
+
             projectForm: {
                 name:{
-                    // elementType: 'inputNomProjet',
-                    // elementConfig: {
-                    //     type:"text" ,
-                    //     placeholder:"Nom du projet"
-                    // },
                     value: '',
-                    // validation: {
-                    //     required: true
-                    //   },
-                    //   valid: false
                  },
 
             categorie: {
-                    
-                    // elementType: 'SelectCategorieProjet',
-                    // elementConfig: {
-                    //     type: 'text',
-                    //     options: 
-                    //     [
-                    //         {value: 'oilgaz', displayValue: 'Gaz et Pétrole'},
-                    //         {value: 'water', displayValue: "Traitement de l'eau"},
-                    //         {value: 'energy', displayValue: 'Energie renouvelable'},
-                    //         {value: 'operation', displayValue: 'Operation et Maintenance'},
-                    //         {value: 'industry', displayValue: 'Industrie'},
-                    //     ]
+                 elementConfig: {
+                        type: 'text',
+                        options: 
+                        [
+                            {value: 'oilgaz', displayValue: 'Gaz et Pétrole'},
+                            {value: 'water', displayValue: "Traitement de l'eau"},
+                            {value: 'energy', displayValue: 'Energie renouvelable'},
+                            {value: 'operation', displayValue: 'Operation et Maintenance'},
+                            {value: 'industry', displayValue: 'Industrie'},
+                       ]
                         
-                    // },
+                    },
+
                     value: '',
-                    // validation: {},
-                    //   valid: false
             },
             location: {
-                    // elementType: 'selectLocation',
-                    // elementConfig: {
-                    //     type: 'text',
-                        
-                    // },
                     value: '',
-                //     validation: {
-                //         required: true,
-                //         valid: false,
-                //         touched: false, 
-                //     },
-                //       valid: false,
-                //       touched: false
                  },
             customer: {
-                    // elementType: 'selectClient',
-                    // elementConfig: {
-                    //     type: 'text',
-                    //     placeholder: 'Client',
-                    //     options:
-                    //     [ //'MSBI', 'STAROIL', 'ECM+', 'BRITSH GAS TUNISIA'
-                    //      //,'STAR CONTRACTING'
-                    //         {value: 'MSBI', displayValue: 'MSBI'},
-                    //         {value: 'STAROIL', displayValue: 'STAROIL'},
-                    //         {value: 'ECM+', displayValue: 'ECM+'},
-                    //         {value: 'BRITSH GAS TUNISIA', displayValue: 'BRITSH GAS TUNISIA'},
-                    //         {value: 'STAR CONTRACTING', displayValue: 'STAR CONTRACTING'},
-                    //     ]
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Client',
+                    options:
+                    [ 
+                        {value: 'MSBI', displayValue: 'MSBI'},
+                        {value: 'STAROIL', displayValue: 'STAROIL'},
+                        {value: 'ECM+', displayValue: 'ECM+'},
+                        {value: 'BRITSH GAS TUNISIA', displayValue: 'BRITSH GAS TUNISIA'},
+                        {value: 'STAR CONTRACTING', displayValue: 'STAR CONTRACTING'},
+
+                    ]
+                
                     
-                        
-                    // },
-                    value: '',
-                    
-                    // validation: {},
-                    //   valid: false,
-                    //   touched: false
+                },
+                
+                 value: '',
+                  
                 },
                
             progress: {
-                    elementType: 'inputChekProgress',
-                    elementConfig: {
-                        type: 'check',
-                       
-                    }
                 },
             BillingType: {
-                  //elementType: 'selectTypeFacturation',
-                //   elementConfig: {
-                      
-                //     options: 
-                //     [
+                 elementType: 'selectTypeFacturation',
+                  elementConfig: {
                         
-                //       {value: 'fixe', displayValue: 'Coût fixe'},
-                //       {value: 'Par Heures de Projet', displayValue: 'Par Heure de projet'},
-                //       {value: 'Par Heures de Tache', displayValue: 'Par Heure de tâche '},
-                //     ]
-                //   },
-                  value: '',
-                //   validation: {},
-                //   valid: true,
-                //   touched: false
-                   },
-                totalCost: {
-                    // elementType: 'inputCoupTotal',
-                    // elementConfig: {
-                    //     type: 'number',
-                        
-                    // },
-                    value: '',
-                    // validation: {
-                    //     required: true,
-                    //     maxLength: 4
-                    // },
-                    // valid: true,
-                    // touched: false
-                } ,
-                status: {
-                   // elementType: 'selectStatus',
-                    // elementConfig: {
-                    //   options: 
-                    //   [
-                    //     {value: 'En Cours', displayValue: 'En cours'},
-                    //     {value: 'Non Commencé', displayValue: 'Non Commencé'},
-                    //     {value: 'En Attente', displayValue: 'En Attente'},
-                    //     {value: 'Annulé', displayValue: 'Annulé'},
-                    //     {value: 'Fini', displayValue: 'Achevés'},
-                    //   ]
-                    // },
-                    value: '',
-                    // validation: {},
-                    // valid: true,
-                    // touched: false
-                  },
-              
-                description: {
-                    // elementType: 'textareaDescription',
-                    // elementConfig: {
-                    //     type: 'textarea',
-                  
-                    // },
-                    value: '',
-                //     validation: {
-                //         required: true
-                //       },
-                //       valid: false
-                      
+                       options: 
+                        [
+                            
+                          {value: 'fixe', displayValue: 'Coût fixe'},
+                          {value: 'Par Heures de Projet', displayValue: 'Par Heure de projet'},
+                          {value: 'Par Heures de Tache', displayValue: 'Par Heure de tâche '},
+                        ]
+                      },
     
-                 },
-                checkEmail: {
-                    elementType: 'inputChekEmail',
+                  value: '',
+                
+                   },
+            totalCost: {
+                    value: '',
+                } ,
+            status: {
+                    value: '',
                     elementConfig: {
-                        type: 'checkbox',
-                        
+                      options: 
+                      [
+                        {value: 'En Cours', displayValue: 'En cours'},
+                       {value: 'Non Commencé', displayValue: 'Non Commencé'},
+                        {value: 'En Attente', displayValue: 'En Attente'},
+                        {value: 'Annulé', displayValue: 'Annulé'},
+                        {value: 'Fini', displayValue: 'Achevés'},
+                      ]
                     },
+
+                },
+              
+            description: {
+                   value: ''
+                 },
+            checkEmail: {
+                   
                 },
             }, 
             loading: false,
            
         }
         
-    }
-    componentDidMount =() => {
-    //     //console.log(this.state.projectForm.name.valid)
-    //     axios.get('http://eppmdashboard.herokuapp.com/api/projects')
-    
-    // .then(response => { 
-    //    for( let i=0; i<response.data.length; i++ )
-    //   {
-    //    // console.log(response.data[i].name)
-    //     this.setState({
-    //         exmpForm:response.data[i].name
-    //      }) 
-    //   }
-     
-  
-    // });
-    
-  
     }
     canceledHandler = ()=>
     {
@@ -298,23 +219,24 @@ export class AddProjects extends Component {
         return isValid;
      }
       inputChangedHandler = (event, inputIdentifier) => {
-        const updatedProjectForm = {
-          ...this.state.projectForm
-        };
-        const updatedFormElement = { 
-          ...updatedProjectForm[inputIdentifier] 
-        };
+        // const updatedProjectForm = {
+        //   ...this.state.projectForm
+        // };
+        // const updatedFormElement = { 
+        //   ...updatedProjectForm[inputIdentifier] 
+        // };
     
-        updatedFormElement.value = event.target.value;
-        updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
-        updatedFormElement.touched = true;
-        updatedProjectForm[inputIdentifier] = updatedFormElement;
+        // updatedFormElement.value = event.target.value;
+        // updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+        // //updatedFormElement.touched = true;
+        // updatedProjectForm[inputIdentifier] = updatedFormElement;
         
-        let formIsValid = false;
-        for( let inputIdentifier in updatedProjectForm) {
-          formIsValid = updatedProjectForm[inputIdentifier].valid && formIsValid;
-        }
-        this.setState({projectForm: updatedProjectForm, formIsValid:formIsValid});
+        // let formIsValid = false;
+        // for( let inputIdentifier in updatedProjectForm) {
+        //   formIsValid = updatedProjectForm[inputIdentifier].valid && formIsValid;
+        // }
+        // this.setState({projectForm: updatedProjectForm, formIsValid:formIsValid});
+        
       };
    
     render() {
@@ -329,65 +251,105 @@ export class AddProjects extends Component {
         let form = (
     
         <Form className=" col-lg-12 mt-5" onSubmit={this.projectDataHandler} >  
-       
-          <Form.Group controlId="formGridAddress1">
-        <Form.Label>* Nom du projet </Form.Label>
-        <Form.Control size="lg" type="text" placeholder="Nom du projet"  />
-    </Form.Group>
-
-    <Form.Group controlId="formGridAddress2">
-        <Form.Label>* Client</Form.Label>
-        <Form.Control size="lg" as="select" placeholder="Client" defaultValue="Sélectionner">
+         
           
-                <option> Sélectionner</option>
-                <option>MSBI</option>
-                <option>STAROIL</option>
-                <option>ECM+</option>
-                <option>BRITSH GAS TUNISIA</option>
-                <option>STAR CONTRACTING</option>
-                <option>MARAFIQ YANBU</option>
-        </Form.Control>
-    </Form.Group>
-    <Form.Group>
-      
-      <Form.Label>Emplacement du Projet</Form.Label>
-      <Form.Row>
-          <ContryRegionComponent/>
+        <Form.Row>
            
-      </Form.Row>
-
-    </Form.Group>
+        <Form.Group as={Col}  controlId="formGridAddress1">
+                <Form.Label> Nom du projet </Form.Label>
+                <Form.Control 
+                    onChange={this.inputChangedHandler}
+                    value={this.state.projectForm.name.value} 
+                   
+                    type="text"
+                    placeholder = "Nom du projet"  
+                    />
+            </Form.Group>
+            <Form.Group controlId="formGridAddress2">
+               <Form.Label>Catégorie </Form.Label>
+               <Form.Control 
+                   
+                    as="select"  
+                    defaultValue="Sélectionner"
+                    onChange={this.inputChangedHandler}
+                    value={this.state.projectForm.categorie.value} 
+                    >
+                    {this.state.projectForm.categorie.elementConfig.options.map(option => (
+                    <option key={option.value} value={option.value}>{option.displayValue}</option>
+                    
+                ))}
+                </Form.Control> 
+                </Form.Group>
+            <Form.Group  controlId="formGridState" className="ml-1">
+                <Form.Label>Statut</Form.Label>
+                    <Form.Control
+                    as="select" 
+                  
+                    onChange={this.inputChangedHandler}
+                    value={this.state.projectForm.status.value} 
+                    >
+                    {this.state.projectForm.status.elementConfig.options.map(option => (
+                    <option key={option.value} value={option.value}>{option.displayValue}</option>
+                        
+                    ))}
+                </Form.Control>
+            </Form.Group>
+        </Form.Row>
+      
+        <Form.Row>
+            <Form.Group as={Col} controlId="formGridAddress2">
+                <Form.Label> Client</Form.Label>
+                <Form.Control 
+                
+                as="select" 
+                placeholder="Client" 
+                defaultValue="Sélectionner"
+                onChange={this.inputChangedHandler}
+                value={this.state.projectForm.customer.value} 
+                >
+                {this.state.projectForm.customer.elementConfig.options.map(option => (
+                    <option key={option.value} value={option.value}>{option.displayValue}</option>
+                    
+                ))}
+                </Form.Control>
+            </Form.Group>
+                <Form.Group className="ml-1">
+                    <Form.Label>Emplacement </Form.Label>
+                    <Form.Row>
+                        <ContryRegionComponent
+                         onChange={this.inputChangedHandler}
+                         value={this.state.projectForm.location.value} 
+                        />
+                    </Form.Row>
+                </Form.Group>
+        </Form.Row>
+  
+   
     <Form.Group id="checkProgress">
         <Form.Check type="checkbox" label="Calculer la progressions à travers les tâches"/>
     </Form.Group>
     <Form.Row>
         <Form.Group as={Col} controlId="formGridState">
             <Form.Label>Type de Facturation</Form.Label>
-            <Form.Control as="select">
-                <option>Coût fixe</option>
-                <option>Par Heure de projet</option>
-                <option>Par Heure de tche</option>
+            <Form.Control 
+              onChange={this.inputChangedHandler}
+              value={this.state.projectForm.BillingType.value} 
+            as="select">
+            {this.state.projectForm.BillingType.elementConfig.options.map(option => (
+            <option key={option.value} value={option.value}>{option.displayValue}</option>
+            
+        ))}
             </Form.Control>
             </Form.Group>
-            <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>Statut</Form.Label>
-            <Form.Control as="select" defaultValue="Choose...">
-                <option>En cours</option>
-                <option>Achevés</option>
-                <option>Annulé</option>
-                <option>Non Commencé</option>
-                <option>En Attente</option>
-            </Form.Control>
-        </Form.Group>
-    </Form.Row>
-
-    <Form.Group controlId="formGridAddress2">
+            <Form.Group controlId="formGridAddress2">
             <Form.Label>Coût total</Form.Label>
             <InputGroup className="mb-3">
             <FormControl
             placeholder="0"
             aria-label="Amount (to the nearest dollar)"
             type="number"
+            onChange={this.inputChangedHandler}
+            value={this.state.projectForm.totalCost.value} 
             />
         <InputGroup.Append>
         <InputGroup.Text>DT</InputGroup.Text>
@@ -395,25 +357,17 @@ export class AddProjects extends Component {
         </InputGroup.Append>
              </InputGroup>
     </Form.Group>
+           
+    </Form.Row>
 
-
-        <Form.Group controlId="formGridAddress2">
-        <Form.Label>Catégorie du projet</Form.Label>
-            <Form.Control size="lg" as="select"  defaultValue="Sélectionner">
-                    <option> Sélectionner</option>
-                    <option>Gaz et Pétrole</option>
-                    <option>Traitement de l'eau</option>
-                    <option>Energie renouvelable</option>
-                    <option>Operation et Maintenance</option>
-                    <option>Industrie</option>
-            </Form.Control>
-
-        </Form.Group>
+   
 
 
         <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description du projet : </Form.Label>
-            <TextAreaComponent/>
+            <TextAreaComponent 
+             onChange={this.inputChangedHandler}
+             value={this.state.projectForm.description.value} />
         </Form.Group>
             
         <Form.Group id="formGridCheckbox">
@@ -421,14 +375,14 @@ export class AddProjects extends Component {
         </Form.Group>
             <hr/>
             
-                 <Form.Group>
-                        <Button variant="success" disabled={this.state.formIsValid} onClick={this.projectDataHandler} className="mr-10"
-                            >Ajouter
-                        </Button>
-                        <Button variant="danger" type="submit" className="" onClick={this.canceledHandler}>
-                            Annuler
-                        </Button>
-                 </Form.Group>
+        <Form.Group>
+            <Button variant="success" disabled={this.state.formIsValid} onClick={this.projectDataHandler} className="mr-10"
+                >Ajouter
+            </Button>
+            <Button variant="danger" type="submit" className="" onClick={this.canceledHandler}>
+                Annuler
+            </Button>
+        </Form.Group>
            
         </Form >
       
@@ -452,15 +406,6 @@ export class AddProjects extends Component {
 }
 const mapStateToProps = state => {
     return {
-            //   ings: state.ingredients,
-            //   price: state.totalPrice
-            // nom:state.firstName,
-            // lastName:state.prenom,
-            // email:state.email,
-            // tel:state.telephone,
-            // salary:state.salair,
-            // birthday:state.date,
-            // address:state.adresse,
             name:state.name,
             customer:state.customer,
             location:state.location,
@@ -468,7 +413,6 @@ const mapStateToProps = state => {
             status:state.status,
             BillingType:state.BillingType,
             description:state.description,
-           // projectData:formData.value
     }
 }
 export default connect(mapStateToProps)(AddProjects); 

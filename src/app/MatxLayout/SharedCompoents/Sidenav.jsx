@@ -45,14 +45,14 @@ const Sidenav = props => {
          
     <Fragment id="section1">
    
-      
+{/*       
        <img
       id="eppmImage"
       style={{width:'10em',height:'4em',marginTop:'5em'}}
       className="ml-15"
       src="/assets/images/eppm.png"
       alt="user"
-        /> 
+        />  */}
            
            
         <Scrollbar

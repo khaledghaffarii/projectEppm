@@ -1,26 +1,38 @@
 import React, { useState, useEffect,useRef } from "react";
-import axios from 'axios';
+//import axios from 'axios';
 import { Breadcrumb ,SimpleCard} from "matx";
 import { Container,Table} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavLink} from 'react-router-dom';
 //import { Table,TableHead,TableCell,TableBody,IconButton,Icon,TableRow} from "@material-ui/core";
+import axios from '../../../../../axios.js';
 
 const OperationMaintenance = () => {
   const isMountedComponent = useRef(true);  
   const [operationList, setOperationList] = useState([]);
   useEffect(()=>{
-    axios.get('http://eppmdashboard.herokuapp.com/api/projects')
-    .then(response=> {
-      if (isMountedComponent.current) {
-        console.log(response.data)
-        setOperationList(response.data);
-      }
-      return () => { isMountedComponent.current = false; };   
-    });
+
+    async function fetchData()
+    {
+            
+      const res = await axios.get('/projects')
+      console.log(res.data)
+      setOperationList(res.data);
     
-  })
- 
+    }
+    fetchData();
+
+  }, [] )
+
+  // axios.get('http://eppmdashboard.herokuapp.com/api/projects')
+  // .then(response=> {
+  //   if (isMountedComponent.current) {
+  //     console.log(response.data)
+  //     setOperationList(response.data);
+  //   }
+  //   return () => { isMountedComponent.current = false; };   
+  // });
+  
   return (
     
 <div className="m-sm-30">

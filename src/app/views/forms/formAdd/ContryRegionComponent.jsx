@@ -5,7 +5,7 @@ import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 export class ContryRegionComponent extends Component {
     constructor (props) {
         super(props);
-        this.state = { country: '', region: '',classes:"width: 250em,font-size:12em" };
+        this.state = { country: '', region: '',classes:"width: 250em,font-size:12em,color:#CDD4D9" };
       }
       selectCountry (val) {
         this.setState({ country: val });
@@ -28,6 +28,7 @@ export class ContryRegionComponent extends Component {
               country={country}
               value={region}
               onChange={(val) => this.selectRegion(val)} 
+              
               classes={classes}  />
           </div>
           )

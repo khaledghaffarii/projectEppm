@@ -11,7 +11,7 @@ import { Editor } from '@tinymce/tinymce-react';
 			<Editor
 			//initialValue= {this.content}
 			init={{
-			  height: 500,
+			  height: 150,
 			  menubar: false,
 			//   plugins: [
 			// 	'advlist autolink lists link image charmap print preview anchor',
