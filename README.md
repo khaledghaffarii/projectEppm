@@ -1,4 +1,4 @@
-<h1><a href="https://ui-lib.com/downloads/matx-react-dashboard/" React Admin Dashboard Template</a></h1>
+<h1> React Admin Dashboard Template</h1>
 
 
 
